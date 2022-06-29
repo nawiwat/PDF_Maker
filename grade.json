@@ -1,0 +1,239 @@
+{
+    "report": [
+        {
+            "grades": [
+                {
+                    "courseCode": "CMU 18-990",
+                    "final_score": "S",
+                    "points": 0,
+                    "short_title": "Reading and Research",
+                    "title": "Reading and Research",
+                    "units": 12
+                }
+            ],
+            "semester": "Summer 2020",
+            "summary" :
+                {   
+                    "max_pts": 0,
+                    "points": 0,
+                    "qpa": 0,
+                    "units": 12,
+                    "units_fac": 0
+                },
+            "cumulative": 
+                {
+                    "max_pts": 0,
+                    "points": 0,
+                    "qpa": 0,
+                    "units": 0,
+                    "units_fac": 0
+                }
+            
+        },
+        {
+            "grades": [
+                {
+                    "courseCode": "CMKL 56-900",
+                    "final_score": "S",
+                    "points": 0,
+                    "short_title": "Interdisciplinary Project",
+                    "title": "Interdisciplinary Project",
+                    "units": 27
+                },
+                {
+                    "courseCode": "CMKL 56-900",
+                    "final_score": "S",
+                    "points": 0,
+                    "short_title": "Interdisciplinary Project",
+                    "title": "Interdisciplinary Project",
+                    "units": 12
+                }
+            ],
+            "semester": "Fall 2021",
+            "summary": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 39,
+                "units_fac": 0
+            },
+            "cumulative": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 0,
+                "units_fac": 0
+            }
+
+        },
+        {
+            "grades": [
+                {
+                    "courseCode": "CMKL 56-663",
+                    "final_score": null,
+                    "short_title": "Business of Gaming",
+                    "title": "Business of Gaming",
+                    "units": 6
+                },
+                {
+                    "courseCode": "CMKL 56-664",
+                    "final_score": "O",
+                    "points": 0,
+                    "short_title": "Strategic Presentation Skills",
+                    "title": "Strategic Presentation Skills",
+                    "units": 6
+                }
+            ],
+            "semester": "Mini Course 2 Fall 2021",
+            "summary": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 6,
+                "units_fac": 0
+            },
+            "cumulative": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 0,
+                "units_fac": 0
+            }
+
+        },
+        {
+            "grades": [
+                {
+                    "courseCode": "CMKL 18-613",
+                    "final_score": "S",
+                    "points": 0,
+                    "short_title": "Foundations of Computer Systems",
+                    "title": "Foundations of Computer Systems",
+                    "units": 12
+                },
+                {
+                    "courseCode": "CMKL 18-900",
+                    "final_score": "S",
+                    "points": 0,
+                    "short_title": "Research, Entrepreneurship and Innovation",
+                    "title": "Research, Entrepreneurship and Innovation",
+                    "units": 12
+                },
+                {
+                    "courseCode": "CMKL 18-910",
+                    "final_score": "S",
+                    "points": 0,
+                    "short_title": "Research and Development",
+                    "title": "Research and Development",
+                    "units": 12
+                },
+                {
+                    "courseCode": "CMKL 56-652",
+                    "final_score": "S",
+                    "points": 0,
+                    "short_title": "Visual Storytelling",
+                    "title": "Visual Storytelling",
+                    "units": 12
+                },
+                {
+                    "courseCode": "CMKL 56-900",
+                    "final_score": null,
+                    "short_title": "Interdisciplinary Project",
+                    "title": "Interdisciplinary Project",
+                    "units": 27
+                }
+            ],
+            "semester": "Spring 2022",
+            "summary": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 48,
+                "units_fac": 0
+            },
+            "cumulative": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 0,
+                "units_fac": 0
+            }
+        },
+        {
+            "grades": [
+                {
+                    "courseCode": "CMKL 56-657",
+                    "final_score": null,
+                    "short_title": "Intellectual Property Law in Media, Entertainment, and Technology",
+                    "title": "Intellectual Property Law in Media, Entertainment, and Technology",
+                    "units": 6
+                },
+                {
+                    "courseCode": "CMKL 56-659",
+                    "final_score": null,
+                    "short_title": "Human-centered UI/UX Design Crash Course ",
+                    "title": "Human-centered UI/UX Design Crash Course ",
+                    "units": 6
+                }
+            ],
+            "semester": "Mini Course 4 Spring 2022",
+            "summary": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 0,
+                "units_fac": 0
+            },
+            "cumulative": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 0,
+                "units_fac": 0
+            }
+        },
+        {
+            "grades": [
+                {
+                    "courseCode": "CMKL 18-631",
+                    "final_score": null,
+                    "short_title": "Introduction to Information Security",
+                    "title": "Introduction to Information Security",
+                    "units": 12
+                }
+            ],
+            "semester": "Fall 2022",
+            "summary": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 0,
+                "units_fac": 0
+            },
+            "cumulative": 
+            {
+                "max_pts": 0,
+                "points": 0,
+                "qpa": 0,
+                "units": 0,
+                "units_fac": 0
+            }
+        }
+    ],
+        "overall": {
+            "max_pts": 0,
+            "points": 0,
+            "qpa": 0,
+            "units": 0,
+            "units_fac": 0
+        }
+}
