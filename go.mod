@@ -1,5 +1,5 @@
-module github.com/nawiwat/PDF_Maker
+module PDf_creater
 
 go 1.18
 
-require github.com/jung-kurt/gofpdf v1.16.2 // indirect
+require github.com/jung-kurt/gofpdf v1.16.2
