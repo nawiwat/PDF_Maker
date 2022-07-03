@@ -12,7 +12,9 @@ import (
 //Globe value
 var Record report
 
+//Main
 func main(){
+	//Import Json Values
 	jsonFile, err_r := os.Open("grade.json")
 	if err_r != nil {
         fmt.Println("error")
@@ -23,7 +25,7 @@ func main(){
 
 	//Values
 	firstPagePosX,firstPagePosY := 10.0 , 46.0
-	NextPagePosX,NextPagePosY := 10.0, 10.0
+	NextPagePosX,NextPagePosY := 10.0, 15.0
 	TableSpace := 250.0
 	PagePosX,PagePosY := firstPagePosX,firstPagePosY
 	CurrentSite := "Left"
@@ -41,8 +43,11 @@ func main(){
 	//Main Table Loop
 	pdf.SetFont("Arial","B",7)
 	for i := 0 ; i < len(Record.Report) ; i++ {
+		//Position Set
 		pdf.SetXY(PagePosX,PagePosY)
 		TableSize = TableSpaceCal(i)
+
+		//Page Cases
 		if TableSpace - PagePosY < TableSize {
 			if FirstPage == true {
 				PagePosX,PagePosY = firstPagePosX + 100 , firstPagePosY
@@ -62,24 +67,26 @@ func main(){
 					pdf.AddPage()
 				}
 			}
-			
 		}
 
+		//Build Table
 		BuildTable(pdf,i,PagePosX,PagePosY)
-
 		pdf.Line(PagePosX,PagePosY + TableSize - 4 ,PagePosX + 90 ,PagePosY + TableSize - 4 )
-
 		PagePosY += TableSize
 	}
-	
+
+	//Grade footer & Last page footer
 	Gradefooter(pdf,PagePosX,PagePosY)
 	Footer(pdf)
 
+	//Pdfs output
 	err := pdf.OutputFileAndClose("pdfs/hello.pdf")
 	if err != nil{
 		fmt.Println("error")
 	}
 }
+
+//Functions
 
 //Import grade info
 type report struct {
@@ -140,6 +147,7 @@ func Header(pdf *gofpdf.Fpdf) *gofpdf.Fpdf{
 
 	return pdf
 }
+
 func Footer(pdf *gofpdf.Fpdf) *gofpdf.Fpdf{
 	pdf.SetXY(5,287)
 	pdf.SetFont("Arial","",9)
@@ -151,6 +159,7 @@ func Footer(pdf *gofpdf.Fpdf) *gofpdf.Fpdf{
 	pdf.SetTextColor(0,0,0)
 	return pdf
 }
+
 func GradeHeader(pdf *gofpdf.Fpdf) *gofpdf.Fpdf{
 	pdf.SetXY(10,46)
 	pdf.SetFont("Arial","B",9)
@@ -158,6 +167,7 @@ func GradeHeader(pdf *gofpdf.Fpdf) *gofpdf.Fpdf{
 	pdf.CellFormat(90,6,"Beginning of Graduate Record","",0,"CM",true,0,"")
 	return pdf
 }
+
 func Gradefooter(pdf *gofpdf.Fpdf , PagePosX float64 , PagePosY float64) *gofpdf.Fpdf{
 	pdf.SetXY(PagePosX,PagePosY)
 	pdf.SetFont("Arial","B",9)
@@ -165,6 +175,7 @@ func Gradefooter(pdf *gofpdf.Fpdf , PagePosX float64 , PagePosY float64) *gofpdf
 	pdf.CellFormat(90,6,"End of Graduate Record","",0,"CM",true,0,"")
 	return pdf
 }
+
 
 //Tables
 func TableSpaceCal(i int) float64{
@@ -174,7 +185,7 @@ func TableSpaceCal(i int) float64{
 
 func BuildTable(pdf *gofpdf.Fpdf , i int ,PosX float64 , PosY float64) *gofpdf.Fpdf{
 	TEXT := [][]byte{}
-
+	aligns := []string{"CB","CM"} 
 	//Semester Header
 	pdf.SetXY(PosX,PosY)
 	pdf.SetFont("Arial","B",8)
@@ -200,15 +211,35 @@ func BuildTable(pdf *gofpdf.Fpdf , i int ,PosX float64 , PosY float64) *gofpdf.F
 
 		pdf.SetXY(PosX + 14,PosY)
 		TEXT = pdf.SplitLines([]byte(Record.Report[i].Grades[j].CourseCode),10)
-		for _,lN := range TEXT {
-			pdf.CellFormat(10, float64(14/len(TEXT)) ,string(lN),"", int(14/len(TEXT)) ,"CM",false,0,"")
+		L := 0
+		if len(TEXT) != 2 {
+			for _,lN := range TEXT {
+				pdf.CellFormat(10, float64(14/len(TEXT)) ,string(lN),"", int(14/len(TEXT)) ,"CM",false,0,"")
+			}
+		}else{
+			for _,lN := range TEXT {
+				pdf.CellFormat(10, 6 ,string(lN),"", int(14/len(TEXT)) ,aligns[L],false,0,"")
+				L++
+			}
 		}
+
 		
+		
+
 		pdf.SetXY(PosX + 24,PosY)
 		TEXT = pdf.SplitLines([]byte(Record.Report[i].Grades[j].Title),30)
-		for _,lN := range TEXT {
-			pdf.CellFormat(30, float64(14/len(TEXT)) ,string(lN),"", int(14/len(TEXT)) ,"CM",false,0,"")
+		L = 0
+		if len(TEXT) != 2 {
+			for _,lN := range TEXT {
+				pdf.CellFormat(30, float64(14/len(TEXT)) ,string(lN),"", int(14/len(TEXT)) ,"CM",false,0,"")
+			}
+		}else{
+			for _,lN := range TEXT {
+				pdf.CellFormat(30, 6 ,string(lN),"", int(14/len(TEXT)) ,aligns[L],false,0,"")
+				L++
+			}
 		}
+		
 
 		pdf.SetXY(PosX + 54,PosY)
 		pdf.CellFormat(12,14, strconv.Itoa(Record.Report[i].Grades[j].Units) ,"",0,"CM",false,0,"")
